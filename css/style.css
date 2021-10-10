@@ -122,6 +122,18 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* button and animation button */
 .btn:link,
 .btn:visited {
@@ -132,6 +144,8 @@ body {
   border-radius: 100px;
   /* ease transition */
   transition: all 0.2s;
+  /* set btn ::after relative positive*/
+  position: relative;
 }
 
 .btn:hover {
@@ -148,5 +162,33 @@ body {
 .btn-white {
   background-color: #fff;
 }
+/* set the ::after button behide the real btn */
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
 
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* fade the after btn */
+  opacity: 0;
+}
+/* btn animation */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* stop showing the button before animation */
+  animation-fill-mode: backwards;
+}
 /* -- end hero screen end -- */
