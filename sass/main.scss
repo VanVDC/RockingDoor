@@ -6,45 +6,60 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
 /* reset */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
-  font-size: 62.5%; }
-
+  font-size: 62.5%;
+}
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* hero screen */
+
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   /* set relative for children absolute positiion */
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
 
 /* logo */
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
-
+  left: 4rem;
+}
 .header__logo {
-  height: 3.5rem; }
-
+  height: 3.5rem;
+}
 /* -text box */
 .header__text-box {
   /* centering the title */
@@ -54,16 +69,17 @@ body {
   /* move the title element a little to the left */
   transform: translate(-50%, -50%);
   /* move the button to the center */
-  text-align: center; }
-
+  text-align: center;
+}
 /* heading */
+
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   /* remove the shaky during the animation */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
+  margin-bottom: 6rem;
+}
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -73,46 +89,61 @@ body {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  /* animation-iteration-count: 3; */
-  /* animation-delay: 3s; */ }
 
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.74rem;
-  animation: moveInRight 1s ease-out; }
+  animation: moveInRight 1s ease-out;
+}
 
 /* animation title */
 @keyframes moveInLeft {
   0% {
     /* hidden and move the title at left 100px to start */
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     /* hidden and move the title at left 100px to start */
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /* button and animation button */
 .btn:link,
@@ -126,21 +157,23 @@ body {
   transition: all 0.2s;
   /* set btn ::after relative positive*/
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
 .btn:hover {
   /* move up */
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 .btn:active {
   /* move down */
   transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 .btn-white {
-  background-color: #fff; }
-
+  background-color: $color-white;
+}
 /* set the ::after button behide the real btn */
 .btn::after {
   content: '';
@@ -152,20 +185,22 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   /* fade the after btn */
-  opacity: 0; }
-
+  opacity: 0;
+}
 /* btn animation */
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /* stop showing the button before animation */
-  animation-fill-mode: backwards; }
-
+  animation-fill-mode: backwards;
+}
 /* -- end hero screen end -- */
