@@ -10,6 +10,7 @@
   background-position: top;
   /* set relative for children absolute positiion */
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   /* logo */
