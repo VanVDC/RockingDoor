@@ -1,10 +1,10 @@
 .card {
+  // funtionality
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
   height: 52rem;
 
-  // funtionality
   &__side {
     height: 50rem;
     transition: all 0.8s ease;
@@ -89,6 +89,7 @@
 
   &__details {
     padding: 3rem;
+
     ul {
       list-style: none;
       width: 80%;
