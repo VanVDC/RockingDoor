@@ -13,10 +13,17 @@
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
-    &__input:focus {
+
+    &:focus {
+      //create bottom border green when focus
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      // Change bottom color to orange until valid input
+      border-bottom: 3px solid $color-secondary-dark;
     }
 
     &::-webkit-input-placeholder {
@@ -25,5 +32,18 @@
   }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s; //make the placeholder move down slower
+  }
+
+  &__input:placeholder-shown + &__label {
+    //show the label when type in input
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); //make the placeholder move down
   }
 }
