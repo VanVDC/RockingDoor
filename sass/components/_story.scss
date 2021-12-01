@@ -13,6 +13,7 @@
   // }
 
   &__shape {
+    //creating the shape size and functionality
     width: 15rem;
     height: 15rem;
     float: left;
@@ -31,10 +32,13 @@
     transition: all 0.5s; //zoom smoother
   }
   &__text {
-    transform: skewX(12deg); //counter the skew
+    transform: skewX(
+      12deg
+    ); //counter the skew or else it will skew the shape and text too.
   }
 
   &__caption {
+    //styling the name
     position: absolute;
     top: 50%;
     left: 50%;

@@ -1,8 +1,10 @@
 .form {
   &__group:not(:last-child) {
+    // add margin to everything except the last element
     margin-bottom: 2rem;
   }
   &__input {
+    //creating the input style
     font-size: 1.5rem;
     font-family: inherit;
     color: inherit;
@@ -28,6 +30,7 @@
     }
 
     &::-webkit-input-placeholder {
+      //add color to the bottom of input when trying to type
       color: $color-grey-dark-2;
     }
   }
