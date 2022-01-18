@@ -16,6 +16,9 @@
     width: 90%;
     display: block;
     transition: all 0.3s;
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &:focus {
       //create bottom border green when focus
@@ -55,6 +58,10 @@
     //create our own radio and hide HTML one
     width: 49%;
     display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   //hide the html button
   &__radio-input {
