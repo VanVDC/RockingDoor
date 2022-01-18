@@ -39,6 +39,9 @@
 - tab-port
 - tab-land
 - big desktop
+
+ORDER: base + typography >general layout > page layout >components
+
 1 em = 16px
 */
 @mixin respond($breakpoint) {
